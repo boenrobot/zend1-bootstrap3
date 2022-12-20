@@ -67,7 +67,7 @@ class Twitter_Bootstrap3_Form_Decorator_Feedback_State extends Twitter_Bootstrap
         }
         
         if (array_key_exists('class', $attribs)) {
-            $classes = explode(' ', $attribs['class']);
+            $classes = explode(' ', (string)$attribs['class']);
             if (!in_array($iconClass, $classes)) {
                 array_push($classes, $iconClass);
             }

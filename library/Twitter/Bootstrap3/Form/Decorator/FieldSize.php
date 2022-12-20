@@ -33,7 +33,7 @@ class Twitter_Bootstrap3_Form_Decorator_FieldSize extends Zend_Form_Decorator_Ht
     public function render($content)
     {
         $element = $this->getElement();
-        $class = $this->getOption('class');
+        $class = (string)$this->getOption('class');
         $dimension = $this->getDimension();
         
         if (!empty($dimension)) {
