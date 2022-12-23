@@ -30,7 +30,7 @@ class Twitter_Bootstrap3_Form_Decorator_CheckboxControls extends Zend_Form_Decor
         $element = $this->getElement();
         
         if (array_key_exists('class', $attribs) && is_string($attribs['class']) && !empty($attribs['class'])) {
-            if (!in_array('checkbox', explode(' ', $attribs['class']))) {
+            if (!in_array('checkbox', explode(' ', (string)$attribs['class']))) {
                 $attribs['class'] = 'checkbox ' . $attribs['class'];
             }
         } else {

@@ -34,7 +34,7 @@ class Twitter_Bootstrap3_View_Helper_FormNote extends Zend_View_Helper_FormNote
     public function formNote($name, $value = null, $attribs = null)
     {
         if (array_key_exists('class', $attribs)) {
-            $classes = explode(' ', $attribs['class']);
+            $classes = explode(' ', (string)$attribs['class']);
             if (!in_array('form-control-static', $classes)) {
                 $attribs['class'] = 'form-control-static ' . implode(' ', $classes);
             }

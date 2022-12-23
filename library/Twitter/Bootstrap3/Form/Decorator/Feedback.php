@@ -40,9 +40,9 @@ class Twitter_Bootstrap3_Form_Decorator_Feedback extends Zend_Form_Decorator_Htm
         $attribs = $this->getOptions();
         
         if (array_key_exists('class', $attribs)) {
-            $classes = explode(' ', $attribs['class']);
-            if (!in_array('form-control-feedback', $classes)) {
-                array_push($classes, 'form-control-feedback');
+            $classes = explode(' ', (string)$attribs['class']);
+            if (!in_array('form-control-feedback', $classes, true)) {
+                $classes[] = 'form-control-feedback';
             }
             $this->setOption('class', implode(' ', $classes));
         } else {
@@ -56,9 +56,9 @@ class Twitter_Bootstrap3_Form_Decorator_Feedback extends Zend_Form_Decorator_Htm
         $element = $this->getElement();
         $container = $element->getDecorator('Container');
         if (!empty($container)) {
-            $classes = explode(' ', $container->getOption('class'));
-            if (!in_array('has-feedback', $classes)) {
-                array_push($classes, 'has-feedback');
+            $classes = explode(' ', (string)$container->getOption('class'));
+            if (!in_array('has-feedback', $classes, true)) {
+                $classes[] = 'has-feedback';
             }
             $container->setOption('class', implode(' ', $classes));
         }
